@@ -1,0 +1,44 @@
+package Runner;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+public class Lab1Question2 {
+	public static void main(String[] args) {
+		try {
+			System.out.println("Hello world!");
+			MysqlDataSource mysqlDS = new MysqlDataSource();
+			mysqlDS.setURL("jdbc:mysql://localhost:3306/salespersonsDB2P1?serverTimezone=UTC");
+			mysqlDS.setUser("root");
+			mysqlDS.setPassword("root1234");
+			Connection conn = mysqlDS.getConnection();
+			
+			/*part2 create scanner
+			Scanner com = new Scanner(System.in);
+			System.out.println("Enter commission to be found");
+			double input = com.nextDouble();*/
+			
+			Statement myStmt = conn.createStatement();
+			String query = "SELECT * FROM salespersons_city_table WHERE commission <= ?";
+			ResultSet rs = myStmt.executeQuery(query);
+			
+			while(rs.next()) {
+				String sid = rs.getString("sid");
+				String fname = rs.getString("fname");
+				String surname = rs.getString("surname");
+				String city = rs.getString("city");
+				String commission = rs.getString("commission");
+				System.out.println(sid +" | " + fname +", " +surname +" | " +city +" | " +commission);
+			}
+			
+		} catch (SQLException se){
+			System.out.println(se.getMessage());
+			
+		}
+	}
+}

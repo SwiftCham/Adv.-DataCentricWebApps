@@ -1,0 +1,39 @@
+package Runner;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLDataException;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+import com.mysql.cj.jdbc.MysqlDataSource;
+import java.util.*;
+
+public class Lab1Question3 {
+	public static void main(String[] args) {
+		List<Employee> employees = new ArrayList<>();
+	}
+}
+
+
+
+class Employee {
+    private String id;
+    private String name;
+    private String nextOfKinName;
+    private double salary;
+
+    public Employee(String id, String name, String nextOfKinName, double salary) {
+        this.id = id;
+        this.name = name;
+        this.nextOfKinName = nextOfKinName;
+        this.salary = salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee ID: " + id + ", Name: " + name + ", Next of Kin: " + nextOfKinName + ", Salary: " + salary;
+    }
+}

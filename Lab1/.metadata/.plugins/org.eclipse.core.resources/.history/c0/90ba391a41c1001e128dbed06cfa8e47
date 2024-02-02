@@ -1,0 +1,33 @@
+package Runner;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.Scanner;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+public class Lab1Question2 {
+	public static void main(String[] args) {
+		try {
+			MysqlDataSource mysqlDS = new MysqlDataSource();
+			mysqlDS.setURL("jdbc:mysql://localhost:3306/salespersonsDB2P1?serverTimezone=UTC");
+			mysqlDS.setUser("root");
+			mysqlDS.setPassword("root1234");
+			Connection conn = mysqlDS.getConnection();
+			
+			String checkQuery = "SELECT * FROM salesperson WHERE sid = ?";
+			try(PreparedStatement chechStmnt = conn.prepareStatement(checkQuery)) { //checks if SID already exists
+				checkStmt.setString(1, sid);
+			}
+			
+
+			
+		} catch (SQLException se){
+			System.out.println(se.getMessage());
+			
+		}
+	}
+}

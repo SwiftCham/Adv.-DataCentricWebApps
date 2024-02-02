@@ -1,0 +1,25 @@
+package Runner;
+
+import java.sql.Connection;
+import java.sql.Statement;
+
+import com.mysql.cj.jdbc.MysqlDataSource;
+
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+
+public class lab1Main {
+	public static void main(String[] args) {
+		System.out.println("Hello world!");
+		MysqlDataSource mysqlDS = new MysqlDataSource();
+		mysqlDS.setURL("jdbc:mysql://localhost:3306/employees?serverTimezone=UTC");
+		mysqlDS.setUser("root");
+		mysqlDS.setPassword("root1234");
+		
+		
+		Connection conn = mysqlDS.getConnection();
+	}
+}
+
+

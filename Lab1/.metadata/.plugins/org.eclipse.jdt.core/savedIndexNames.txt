@@ -1,0 +1,5 @@
+INDEX VERSION 1.134+/Users/benjamin/Desktop/College/Year3Sem2/Adv. DataCentricWebApps/Lab1/.metadata/.plugins/org.eclipse.jdt.core
+1865797976.index
+4008967867.index
+2657394288.index
+3421160252.index
